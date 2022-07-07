@@ -8,8 +8,9 @@ OBJS = tokenizer.o history.o uimain.o
 all: tokenizer
 
 # include file dependencies
-tokenizer.o: tokenizer.h tokenizer.c uimain.o
-history.o: history.h history.c uimain.o
+tokenizer.o: tokenizer.h tokenizer.c
+history.o: history.h history.c
+uimain.o: tokenizer.h history.h
 
 # $@=target, $^=prerequisites
 tokenizer: tokenizer.o history.o uimain.o
